@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// This file contains styles specific to sign up page
+// -----------------------------------------------------------------------------
+
+body {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/sailboat.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 25vw;
+    min-width: 300px;
+    flex:1 0 auto;
+}
+
+.center {
+    background-color: $dark-blue-gray;
+    min-width: 40px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    height: 100vh;
+    
+    .logo-container {
+        display: none;
+    }
+
+    footer {
+        display: none;
+        position: relative;
+        margin-top: auto;
+    }
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+}
+
+@media (max-width: map-get($breakpoints, medium)) {
+    .left {display: none}
+    .center {display: none}
+    .right .logo-container {
+        display: flex;
+        margin: 0 0 0 0;
+        width: 100%;
+    }
+    .right footer {display: inline}
+    .right-box, .logo-container{position: relative}
+    .right::before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/sailboat.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        opacity: 0.4;
+    }
+}
